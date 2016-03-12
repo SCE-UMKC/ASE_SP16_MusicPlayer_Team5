@@ -13,7 +13,6 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
-
     }
     public void register(View v)
     {
@@ -21,5 +20,4 @@ public class Login extends AppCompatActivity {
         startActivity(redirect);
 
     }
-
 }
