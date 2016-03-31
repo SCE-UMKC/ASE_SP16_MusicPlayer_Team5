@@ -6,22 +6,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 /**
- * Created by vilas on 2/29/2016.
+ * Created by vilas on 3/30/2016.
  */
-
-public class Register extends AppCompatActivity {
-
+public class Log extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.registration);
-
+        setContentView(R.layout.log);
     }
-    public void signup(View v)
+
+    public void log2(View v)
     {
-        Intent redirect = new Intent(Register.this,SuccReg.class);
+        Intent redirect = new Intent(Log.this,SongMood.class);
         startActivity(redirect);
 
     }
-
-
 }

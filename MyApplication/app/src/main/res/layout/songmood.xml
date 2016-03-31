@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="All Songs"
+        android:onClick="allsongs"
+        android:id="@+id/button12"
+        android:layout_above="@+id/button2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="89dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Yo Yo Honey Singh"
+        android:onClick="allsongs2"
+        android:id="@+id/button2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/button12"
+        android:layout_alignStart="@+id/button12"
+        android:layout_marginBottom="52dp" />
+
+    <ImageButton
+        android:layout_height="100dp"
+        android:layout_width="20dp"
+        android:id="@+id/imageButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/button12"
+        android:layout_toStartOf="@+id/button12"
+        android:src="@drawable/all"
+        android:onClick="allsongs"
+        android:layout_marginTop="20dp"/>
+    <ImageButton
+        android:layout_height="100dp"
+        android:layout_width="20dp"
+        android:id="@+id/imageButton2"
+        android:src="@drawable/honey"
+        android:onClick="allsongs2"
+        android:layout_alignTop="@+id/imageButton"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/button12"
+        android:layout_toEndOf="@+id/button12" />
+
+</RelativeLayout>
