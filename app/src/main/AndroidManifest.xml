@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.monu.myapplication">
+<uses-permission android:name="android.permission.WAKE_LOCK"></uses-permission>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="My Music Player"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="My Music Player"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
+        </activity>
+        <service android:name="com.example.monu.myapplication.MusicService" />
+    <activity android:name=".Register">
+    </activity>
+        <activity android:name=".Log">
+        </activity>
+        <activity android:name=".Main2">
+        </activity>
+
+        <activity android:name=".SuccReg">
+        </activity>
+        <activity android:name=".SongMood">
+        </activity>
+        <activity android:name=".categorisation">
+        </activity>
+
+        <activity android:name=".mainpop">
+        </activity>
+        <activity android:name=".mainrock">
+        </activity>
+
+        <activity android:name=".mainparty">
+        </activity>
+
+        <activity android:name=".instrumentmain">
+        </activity>
+
+        <activity android:name=".maindevotional">
+        </activity>
+
+        <activity android:name=".classicsmain">
+        </activity>
+
+        <activity android:name=".Login">
+            <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+
+</activity>
+    </application>
+
+
+</manifest>
