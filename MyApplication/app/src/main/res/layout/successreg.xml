@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/background12"
+    >
 
     <TextView
         android:layout_width="wrap_content"
@@ -11,7 +13,8 @@
         android:id="@+id/Reg"
         android:layout_marginBottom="99dp"
         android:layout_above="@+id/textView2"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="#F00" />
 
     <Button
         android:layout_width="wrap_content"
@@ -21,7 +24,8 @@
         android:layout_marginTop="63dp"
         android:layout_below="@+id/textView2"
         android:layout_centerHorizontal="true"
-        android:onClick="log3"/>
+        android:onClick="log3"
+        android:textColor="#F00"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -30,5 +34,6 @@
         android:text="Please click login below"
         android:id="@+id/textView2"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="#F00"/>
 </RelativeLayout>

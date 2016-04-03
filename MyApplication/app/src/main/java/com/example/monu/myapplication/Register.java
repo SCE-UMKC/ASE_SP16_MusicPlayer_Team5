@@ -16,7 +16,7 @@ public class Register extends AppCompatActivity {
         setContentView(R.layout.registration);
 
     }
-    public void signup(View v)
+    public void login(View v)
     {
         Intent redirect = new Intent(Register.this,SuccReg.class);
         startActivity(redirect);

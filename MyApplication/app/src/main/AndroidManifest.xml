@@ -20,8 +20,8 @@
             android:screenOrientation="portrait">
         </activity>
         <service android:name="com.example.monu.myapplication.MusicService" />
-    <activity android:name=".Register">
-    </activity>
+        <activity android:name=".Register">
+        </activity>
         <activity android:name=".Log">
         </activity>
         <activity android:name=".Main2">
@@ -31,14 +31,34 @@
         </activity>
         <activity android:name=".SongMood">
         </activity>
+        <activity android:name=".categorisation">
+        </activity>
+
+        <activity android:name=".mainpop">
+        </activity>
+        <activity android:name=".mainrock">
+        </activity>
+
+        <activity android:name=".mainparty">
+        </activity>
+
+        <activity android:name=".instrumentmain">
+        </activity>
+
+        <activity android:name=".maindevotional">
+        </activity>
+
+        <activity android:name=".classicsmain">
+        </activity>
 
         <activity android:name=".Login">
-    <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-        <category android:name="android.intent.category.LAUNCHER" />
-    </intent-filter>
+            <intent-filter>
 
-</activity>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
     </application>
 
 

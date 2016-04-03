@@ -21,7 +21,7 @@ import android.widget.MediaController.MediaPlayerControl;
 import android.widget.Toolbar;
 
 
-public class Main2 extends Activity implements MediaPlayerControl {
+public class classicsmain extends Activity implements MediaPlayerControl {
 
     //song list variables
     private ArrayList<Song> songList;
@@ -145,22 +145,21 @@ public class Main2 extends Activity implements MediaPlayerControl {
                     (android.provider.MediaStore.Audio.Media.ARTIST);
             //add songs to list
 
-                do {
-                    long thisId = musicCursor.getLong(idColumn);
-                    String thisTitle = musicCursor.getString(titleColumn);
-                    String thisArtist = musicCursor.getString(artistColumn);
-
-                    if (thisArtist.equals("Yo Yo Honey Singh") ) {
-                        songList.add(new Song(thisId, thisTitle, thisArtist));
-
-                    }
-                    if (thisArtist.equals("Karthik") ) {
-
-                        songList.add(new Song(thisId, thisTitle, thisArtist));
-
-                    }
+            do {
+                long thisId = musicCursor.getLong(idColumn);
+                String thisTitle = musicCursor.getString(titleColumn);
+                String thisArtist = musicCursor.getString(artistColumn);
+                //String thisArtist = musicCursor.getString(artistColumn);
+                if (thisArtist.equals("DRGM") ) {
+                    songList.add(new Song(thisId, thisTitle, thisArtist));
+                    //(&& musicCursor.getString(artistColumn) =="TeluguMp3.Mobi")
                 }
-                while (musicCursor.moveToNext());
+                if (thisArtist.equals("Shweta Pandit") ) {
+                    songList.add(new Song(thisId, thisTitle, thisArtist));
+                    //(&& musicCursor.getString(artistColumn) =="TeluguMp3.Mobi")
+                }
+            }
+            while (musicCursor.moveToNext());
 
         }
     }
