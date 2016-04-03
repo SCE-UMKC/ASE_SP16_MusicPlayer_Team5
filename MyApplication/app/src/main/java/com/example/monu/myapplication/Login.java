@@ -20,4 +20,10 @@ public class Login extends AppCompatActivity {
         startActivity(redirect);
 
     }
+    public void log(View v)
+    {
+        Intent redirect = new Intent(Login.this,Log.class);
+        startActivity(redirect);
+
+    }
 }
