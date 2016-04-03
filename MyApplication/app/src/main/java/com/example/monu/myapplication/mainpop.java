@@ -3,8 +3,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import com.example.monu.myapplication.MusicService.MusicBinder;
-
-import android.app.ActionBar;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.IBinder;
@@ -16,15 +14,14 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.database.Cursor;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.MediaController.MediaPlayerControl;
 import android.widget.Toolbar;
 
-import android.widget.Toolbar;
-public class MainActivity extends Activity implements MediaPlayerControl {
+
+public class mainpop extends Activity implements MediaPlayerControl {
 
     //song list variables
     private ArrayList<Song> songList;
@@ -41,7 +38,6 @@ public class MainActivity extends Activity implements MediaPlayerControl {
 
     //activity and playback pause flags
     private boolean paused=false, playbackPaused=false;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,8 +108,7 @@ public class MainActivity extends Activity implements MediaPlayerControl {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
@@ -140,7 +135,7 @@ public class MainActivity extends Activity implements MediaPlayerControl {
         Uri musicUri = android.provider.MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
         Cursor musicCursor = musicResolver.query(musicUri, null, null, null, null);
         //iterate over results if valid
-        if(musicCursor!=null && musicCursor.moveToFirst()){
+        if(musicCursor!=null && musicCursor.moveToFirst()) {
             //get columns
             int titleColumn = musicCursor.getColumnIndex
                     (android.provider.MediaStore.Audio.Media.TITLE);
@@ -154,11 +149,19 @@ public class MainActivity extends Activity implements MediaPlayerControl {
                 long thisId = musicCursor.getLong(idColumn);
                 String thisTitle = musicCursor.getString(titleColumn);
                 String thisArtist = musicCursor.getString(artistColumn);
-                songList.add(new Song(thisId, thisTitle, thisArtist));
+                //String thisArtist = musicCursor.getString(artistColumn);
+                if (thisArtist.equals("Devi Sri Prasad") ) {
+                    songList.add(new Song(thisId, thisTitle, thisArtist));
+                    //(&& musicCursor.getString(artistColumn) =="TeluguMp3.Mobi")
+                }
+                if (thisArtist.equals("pop") ) {
+                    songList.add(new Song(thisId, thisTitle, thisArtist));
+                    //(&& musicCursor.getString(artistColumn) =="TeluguMp3.Mobi")
+                }
             }
             while (musicCursor.moveToNext());
-        }
 
+        }
     }
 
     @Override
