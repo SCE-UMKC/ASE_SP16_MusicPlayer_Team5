@@ -12,7 +12,7 @@
         android:padding="@dimen/padding_medium"
         android:gravity="center"
         android:text="@string/ask_access_activity_header"
-        android:textColor="@color/primary_textcolor"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="@dimen/text_size_verylarge"
         android:id="@+id/textView3"
         />
