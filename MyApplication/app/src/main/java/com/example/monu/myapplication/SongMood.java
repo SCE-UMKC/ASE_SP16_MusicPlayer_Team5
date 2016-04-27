@@ -27,4 +27,11 @@ public class SongMood  extends AppCompatActivity {
         startActivity(redirect);
 
     }
+public void allsongs3(View v)
+{
+    Intent redirect = new Intent(SongMood.this,timecategorisation.class);
+    startActivity(redirect);
+
+}
+
 }

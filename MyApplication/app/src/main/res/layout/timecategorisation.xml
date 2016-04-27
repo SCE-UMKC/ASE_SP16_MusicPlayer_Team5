@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageButton
+        android:layout_width="193dp"
+        android:layout_height="147dp"
+        android:id="@+id/imageButton"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="songs1"
+        android:src="@drawable/morn"/>
+
+    <ImageButton
+        android:layout_width="193dp"
+        android:layout_height="143dp"
+        android:id="@+id/imageButton2"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="songs2"
+        android:src="@drawable/aft" />
+
+    <ImageButton
+        android:layout_width="193dp"
+        android:layout_height="147dp"
+        android:id="@+id/imageButton3"
+        android:onClick="songs3"
+        android:src="@drawable/even"
+        android:layout_alignTop="@+id/imageButton2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageButton
+        android:layout_width="193dp"
+        android:layout_height="147dp"
+        android:id="@+id/imageButton4"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/imageButton"
+        android:layout_toEndOf="@+id/imageButton"
+        android:onClick="songs4"
+        android:src="@drawable/night"/>
+
+
+
+
+</RelativeLayout>

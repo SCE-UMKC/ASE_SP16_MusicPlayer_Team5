@@ -12,7 +12,8 @@
         android:icon="@mipmap/ic_launcher"
         android:label="My Music Player"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        >
         <activity
             android:name=".MainActivity"
             android:label="My Music Player"
@@ -46,6 +47,19 @@
         </activity>
 
         <activity android:name=".maindevotional">
+        </activity>
+        <activity android:name=".timecategorisation">
+        </activity>
+        <activity android:name=".morning">
+        </activity>
+
+        <activity android:name=".afternoon">
+        </activity>
+
+        <activity android:name=".evening">
+        </activity>
+
+        <activity android:name=".night">
         </activity>
 
         <activity android:name=".classicsmain">
