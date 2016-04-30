@@ -18,7 +18,7 @@ public class Register extends AppCompatActivity {
     }
     public void login(View v)
     {
-        Intent redirect = new Intent(Register.this,SuccReg.class);
+        Intent redirect = new Intent(Register.this,SuccReg.class);//SuccReg
         startActivity(redirect);
 
     }

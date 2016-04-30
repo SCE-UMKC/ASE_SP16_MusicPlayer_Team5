@@ -1,11 +1,5 @@
 package com.example.monu.myapplication;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import com.example.monu.myapplication.MusicService.MusicBinder;
-import android.net.Uri;
-import android.os.Bundle;
-import android.os.IBinder;
+
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.ContentResolver;
@@ -13,16 +7,25 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.database.Cursor;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.IBinder;
 import android.provider.MediaStore;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.MediaController.MediaPlayerControl;
-import android.widget.Toolbar;
+import android.widget.MediaController;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
-public class maindevotional extends Activity implements MediaPlayerControl {
+/**
+ * Created by vilas on 4/27/2016.
+ */
+public class afternoon extends Activity implements MediaController.MediaPlayerControl {
 
     //song list variables
     private ArrayList<Song> songList;
@@ -40,6 +43,7 @@ public class maindevotional extends Activity implements MediaPlayerControl {
     //activity and playback pause flags
     private boolean paused=false, playbackPaused=false;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,8 +56,8 @@ public class maindevotional extends Activity implements MediaPlayerControl {
         //get songs from device
         getSongList();
         //sort alphabetically by title
-        Collections.sort(songList, new Comparator<Song>(){
-            public int compare(Song a, Song b){
+        Collections.sort(songList, new Comparator<Song>() {
+            public int compare(Song a, Song b) {
                 return a.getTitle().compareTo(b.getTitle());
             }
         });
@@ -70,7 +74,7 @@ public class maindevotional extends Activity implements MediaPlayerControl {
 
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
-            MusicBinder binder = (MusicBinder)service;
+            MusicService.MusicBinder binder = (MusicService.MusicBinder)service;
             //get service
             musicSrv = binder.getService();
             //pass list
@@ -109,7 +113,8 @@ public class maindevotional extends Activity implements MediaPlayerControl {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
         return true;
     }
 
@@ -136,7 +141,7 @@ public class maindevotional extends Activity implements MediaPlayerControl {
         Uri musicUri = android.provider.MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
         Cursor musicCursor = musicResolver.query(musicUri, null, null, null, null);
         //iterate over results if valid
-        if(musicCursor!=null && musicCursor.moveToFirst()) {
+        if(musicCursor!=null && musicCursor.moveToFirst()){
             //get columns
             int titleColumn = musicCursor.getColumnIndex
                     (android.provider.MediaStore.Audio.Media.TITLE);
@@ -144,8 +149,10 @@ public class maindevotional extends Activity implements MediaPlayerControl {
                     (android.provider.MediaStore.Audio.Media._ID);
             int artistColumn = musicCursor.getColumnIndex
                     (android.provider.MediaStore.Audio.Media.ARTIST);
+
             int albumColumn = musicCursor.getColumnIndex
                     (MediaStore.Audio.Media.ALBUM);
+
             //add songs to list
 
             do {
@@ -153,18 +160,16 @@ public class maindevotional extends Activity implements MediaPlayerControl {
                 String thisTitle = musicCursor.getString(titleColumn);
                 String thisArtist = musicCursor.getString(artistColumn);
                 String thisAlbum = musicCursor.getString(albumColumn);
-                if (thisArtist.equals("GOD") ) {
-                    songList.add(new Song(thisId, thisTitle, thisAlbum));
-                    //(&& musicCursor.getString(artistColumn) =="TeluguMp3.Mobi")
-                }
-                if (thisArtist.equals("Shivani") ) {
-                    songList.add(new Song(thisId, thisTitle, thisAlbum));
-                    //(&& musicCursor.getString(artistColumn) =="TeluguMp3.Mobi")
+                //String thisArtist = musicCursor.getString(artistColumn);
+                if (thisAlbum.equals("after") ) {
+                    songList.add(new Song(thisId, thisTitle, thisArtist));
+
                 }
             }
-            while (musicCursor.moveToNext());
 
+            while (musicCursor.moveToNext());
         }
+
     }
 
     @Override

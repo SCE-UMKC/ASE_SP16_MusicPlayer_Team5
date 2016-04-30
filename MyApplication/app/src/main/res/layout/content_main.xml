@@ -5,12 +5,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity"
-    android:background="@drawable/background11">
+    android:background="@drawable/background11"
+    tools:showIn="@layout/activity_main"
+    android:theme="@style/AppTheme">
 
     <ListView
         android:id="@+id/song_list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
         >
     </ListView>
 </RelativeLayout>
