@@ -46,8 +46,8 @@ public class MainActivity extends Activity implements MediaPlayerControl {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
+        setContentView(R.layout.activity_main);
         //retrieve list view
         songView = (ListView)findViewById(R.id.song_list);
         //instantiate list
@@ -108,7 +108,7 @@ public class MainActivity extends Activity implements MediaPlayerControl {
         }
         controller.show(0);
     }
-
+/*
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -133,7 +133,7 @@ public class MainActivity extends Activity implements MediaPlayerControl {
         return super.onOptionsItemSelected(item);
     }
 
-    //method to retrieve song info from device
+  */  //method to retrieve song info from device
     public void getSongList(){
         //query external audio
         ContentResolver musicResolver = getContentResolver();

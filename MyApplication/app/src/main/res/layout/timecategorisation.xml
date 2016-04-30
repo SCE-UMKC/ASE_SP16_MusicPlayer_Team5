@@ -43,7 +43,17 @@
         android:onClick="songs4"
         android:src="@drawable/night"/>
 
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/timeUpdate"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="56dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="40dp"
+        />
 
 
 </RelativeLayout>

@@ -153,6 +153,7 @@ public class night extends Activity implements MediaController.MediaPlayerContro
             int albumColumn = musicCursor.getColumnIndex
                     (MediaStore.Audio.Media.ALBUM);
 
+
             //add songs to list
 
             do {
@@ -160,6 +161,7 @@ public class night extends Activity implements MediaController.MediaPlayerContro
                 String thisTitle = musicCursor.getString(titleColumn);
                 String thisArtist = musicCursor.getString(artistColumn);
                 String thisAlbum = musicCursor.getString(albumColumn);
+
                 //String thisArtist = musicCursor.getString(artistColumn);
                 if (thisAlbum.equals("night") ) {
                     songList.add(new Song(thisId, thisTitle, thisArtist));
