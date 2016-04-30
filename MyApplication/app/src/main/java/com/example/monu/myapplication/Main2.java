@@ -13,6 +13,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.database.Cursor;
+import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -143,20 +144,19 @@ public class Main2 extends Activity implements MediaPlayerControl {
                     (android.provider.MediaStore.Audio.Media._ID);
             int artistColumn = musicCursor.getColumnIndex
                     (android.provider.MediaStore.Audio.Media.ARTIST);
+            int year= musicCursor.getColumnIndex
+                    (MediaStore.Audio.Media.YEAR);
             //add songs to list
 
                 do {
                     long thisId = musicCursor.getLong(idColumn);
                     String thisTitle = musicCursor.getString(titleColumn);
                     String thisArtist = musicCursor.getString(artistColumn);
-
-                    if (thisArtist.equals("Yo Yo Honey Singh") ) {
-                        songList.add(new Song(thisId, thisTitle, thisArtist));
-
-                    }
-                    if (thisArtist.equals("Karthik") ) {
-
-                        songList.add(new Song(thisId, thisTitle, thisArtist));
+                    String thisYear = musicCursor.getString(year);
+                    String ats="2016";
+                    //if (thisArtist.equals("Yo Yo Honey Singh")) {
+                   if (ats.equals(thisYear)) {
+                        songList.add(new Song(thisId, thisTitle, thisYear));
 
                     }
                 }

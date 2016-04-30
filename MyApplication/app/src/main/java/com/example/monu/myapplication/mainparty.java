@@ -158,7 +158,12 @@ public class mainparty extends Activity implements MediaPlayerControl {
                     //(&& musicCursor.getString(artistColumn) =="TeluguMp3.Mobi")
                 }
                 if (thisArtist.equals("DSP") ) {
-                    songList.add(new Song(thisId, thisTitle, thisArtist));
+                    songList.add(new Song(thisId, thisTitle, thisAlbum));
+                    //(&& musicCursor.getString(artistColumn) =="TeluguMp3.Mobi")
+
+                }
+                if (thisArtist.equals("Yo Yo Honey Singh") ) {
+                    songList.add(new Song(thisId, thisTitle, thisAlbum));
                     //(&& musicCursor.getString(artistColumn) =="TeluguMp3.Mobi")
                 }
             }
