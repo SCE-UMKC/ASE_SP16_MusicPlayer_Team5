@@ -1,32 +1,31 @@
 package com.example.monu.myapplication;
 
-import android.app.Activity;
-import android.content.ComponentName;
-import android.content.ContentResolver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.ServiceConnection;
-import android.database.Cursor;
-import android.net.Uri;
-import android.os.Bundle;
-import android.os.IBinder;
-import android.provider.MediaStore;
-import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.ListView;
-import android.widget.MediaController;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-
 /**
- * Created by vilas on 4/27/2016.
+ * Created by vilas on 4/30/2016.
  */
-public class night extends AppCompatActivity implements MediaController.MediaPlayerControl {
+        import android.app.Activity;
+        import android.content.ComponentName;
+        import android.content.ContentResolver;
+        import android.content.Context;
+        import android.content.Intent;
+        import android.content.ServiceConnection;
+        import android.database.Cursor;
+        import android.net.Uri;
+        import android.os.Bundle;
+        import android.os.IBinder;
+        import android.provider.MediaStore;
+        import android.support.v7.app.AppCompatActivity;
+        import android.view.Menu;
+        import android.view.MenuItem;
+        import android.view.View;
+        import android.widget.ListView;
+        import android.widget.MediaController;
+
+        import java.util.ArrayList;
+        import java.util.Collections;
+        import java.util.Comparator;
+
+public class yearnew extends AppCompatActivity implements MediaController.MediaPlayerControl {
 
     //song list variables
     private ArrayList<Song> songList;
@@ -43,7 +42,6 @@ public class night extends AppCompatActivity implements MediaController.MediaPla
 
     //activity and playback pause flags
     private boolean paused=false, playbackPaused=false;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,8 +112,7 @@ public class night extends AppCompatActivity implements MediaController.MediaPla
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
@@ -142,7 +139,7 @@ public class night extends AppCompatActivity implements MediaController.MediaPla
         Uri musicUri = android.provider.MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
         Cursor musicCursor = musicResolver.query(musicUri, null, null, null, null);
         //iterate over results if valid
-        if(musicCursor!=null && musicCursor.moveToFirst()){
+        if(musicCursor!=null && musicCursor.moveToFirst()) {
             //get columns
             int titleColumn = musicCursor.getColumnIndex
                     (android.provider.MediaStore.Audio.Media.TITLE);
@@ -150,10 +147,11 @@ public class night extends AppCompatActivity implements MediaController.MediaPla
                     (android.provider.MediaStore.Audio.Media._ID);
             int artistColumn = musicCursor.getColumnIndex
                     (android.provider.MediaStore.Audio.Media.ARTIST);
+            int year= musicCursor.getColumnIndex
+                    (MediaStore.Audio.Media.YEAR);
 
             int albumColumn = musicCursor.getColumnIndex
                     (MediaStore.Audio.Media.ALBUM);
-
 
             //add songs to list
 
@@ -161,18 +159,27 @@ public class night extends AppCompatActivity implements MediaController.MediaPla
                 long thisId = musicCursor.getLong(idColumn);
                 String thisTitle = musicCursor.getString(titleColumn);
                 String thisArtist = musicCursor.getString(artistColumn);
+                String thisYear2 = musicCursor.getString(year);
                 String thisAlbum = musicCursor.getString(albumColumn);
+                Integer thisYear = musicCursor.getInt(year);
+                Integer ats=2016;
+                Integer ats2=2015;
+                Integer ats3=2014;
+                Integer ats4=2013;
+                Integer ats5=2012;
+                Integer ats6=2011;
+                Integer ats7=2010;
+                Integer ats8=2009;
 
-                //String thisArtist = musicCursor.getString(artistColumn);
-                if (thisAlbum.equals("night") ) {
-                    songList.add(new Song(thisId, thisTitle, thisArtist));
+
+                if (thisYear.equals(ats) || thisYear.equals(ats2) || thisYear.equals(ats3) || thisYear.equals(ats4) || thisYear.equals(ats5) || thisYear.equals(ats6)|| thisYear.equals(ats7)|| thisYear.equals(ats8)) {
+                    songList.add(new Song(thisId, thisTitle, thisAlbum));
 
                 }
             }
-
             while (musicCursor.moveToNext());
-        }
 
+        }
     }
 
     @Override

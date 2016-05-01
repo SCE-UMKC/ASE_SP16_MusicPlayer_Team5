@@ -11,6 +11,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.provider.MediaStore;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -25,7 +26,7 @@ import java.util.Comparator;
 /**
  * Created by vilas on 4/27/2016.
  */
-public class afternoon extends Activity implements MediaController.MediaPlayerControl {
+public class afternoon extends AppCompatActivity implements MediaController.MediaPlayerControl {
 
     //song list variables
     private ArrayList<Song> songList;

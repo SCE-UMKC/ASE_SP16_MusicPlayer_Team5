@@ -72,6 +72,8 @@ public class SongAdapter extends BaseAdapter {
         //set position as tag
         songLay.setTag(position);
         return songLay;
+
+
     }
 
 }

@@ -66,6 +66,12 @@
         <activity android:name=".classicsmain">
         </activity>
 
+        <activity android:name=".year">
+        </activity>
+        <activity android:name=".yearnew">
+        </activity>
+
+
         <activity android:name=".Login">
             <intent-filter>
 

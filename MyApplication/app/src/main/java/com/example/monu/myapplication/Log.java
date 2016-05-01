@@ -16,8 +16,9 @@ public class Log extends AppCompatActivity {
 
     public void log2(View v)
     {
-        Intent redirect = new Intent(Log.this,SongMood.class);
-        startActivity(redirect);
+  Intent redirect = new Intent(Log.this,SongMood.class);
+      startActivity(redirect);
+
 
     }
 }

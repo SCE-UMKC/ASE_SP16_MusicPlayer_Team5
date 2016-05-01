@@ -15,6 +15,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.provider.MediaStore;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,7 +26,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class year extends Activity implements MediaController.MediaPlayerControl {
+public class year extends AppCompatActivity implements MediaController.MediaPlayerControl {
 
     //song list variables
     private ArrayList<Song> songList;
@@ -147,6 +148,9 @@ public class year extends Activity implements MediaController.MediaPlayerControl
                     (android.provider.MediaStore.Audio.Media._ID);
             int artistColumn = musicCursor.getColumnIndex
                     (android.provider.MediaStore.Audio.Media.ARTIST);
+            int albumColumn = musicCursor.getColumnIndex
+                    (MediaStore.Audio.Media.ALBUM);
+
             int year= musicCursor.getColumnIndex
                     (MediaStore.Audio.Media.YEAR);
             //add songs to list
@@ -155,11 +159,22 @@ public class year extends Activity implements MediaController.MediaPlayerControl
                 long thisId = musicCursor.getLong(idColumn);
                 String thisTitle = musicCursor.getString(titleColumn);
                 String thisArtist = musicCursor.getString(artistColumn);
-                String thisYear = musicCursor.getString(year);
-                String ats="2016";
+                String thisAlbum = musicCursor.getString(albumColumn);
+                //String thisYear2 = musicCursor.getString(year);
+                Integer thisYear = musicCursor.getInt(year);
+                Integer ats=1976;
+                Integer ats2=1998;
+                Integer ats3=1987;
+                Integer ats4=1999;
+                Integer ats5=1989;
+                Integer ats6=2001;
+                Integer ats7=2003;
+                Integer ats8=2005;
 
-                if (ats.equals(thisYear)) {
-                    songList.add(new Song(thisId, thisTitle, thisYear));
+
+                if (thisYear.equals(ats) || thisYear.equals(ats2) || thisYear.equals(ats3) || thisYear.equals(ats4) || thisYear.equals(ats5) || thisYear.equals(ats6)|| thisYear.equals(ats7)|| thisYear.equals(ats8)) {
+
+                    songList.add(new Song(thisId, thisTitle, thisAlbum));
 
                 }
             }
