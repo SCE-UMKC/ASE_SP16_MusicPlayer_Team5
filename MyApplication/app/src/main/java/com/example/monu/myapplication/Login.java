@@ -26,4 +26,11 @@ public class Login extends AppCompatActivity {
         startActivity(redirect);
 
     }
+
+    public  void fblog(View v)
+    {
+
+        Intent redirect = new Intent(Login.this,fblogin.class);
+        startActivity(redirect);
+    }
 }

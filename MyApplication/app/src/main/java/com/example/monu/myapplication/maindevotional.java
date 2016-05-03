@@ -13,6 +13,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.database.Cursor;
+import android.provider.MediaStore;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,7 +23,7 @@ import android.widget.MediaController.MediaPlayerControl;
 import android.widget.Toolbar;
 
 
-public class maindevotional extends Activity implements MediaPlayerControl {
+public class maindevotional extends AppCompatActivity implements MediaPlayerControl {
 
     //song list variables
     private ArrayList<Song> songList;
@@ -143,19 +145,21 @@ public class maindevotional extends Activity implements MediaPlayerControl {
                     (android.provider.MediaStore.Audio.Media._ID);
             int artistColumn = musicCursor.getColumnIndex
                     (android.provider.MediaStore.Audio.Media.ARTIST);
+            int albumColumn = musicCursor.getColumnIndex
+                    (MediaStore.Audio.Media.ALBUM);
             //add songs to list
 
             do {
                 long thisId = musicCursor.getLong(idColumn);
                 String thisTitle = musicCursor.getString(titleColumn);
                 String thisArtist = musicCursor.getString(artistColumn);
-                //String thisArtist = musicCursor.getString(artistColumn);
+                String thisAlbum = musicCursor.getString(albumColumn);
                 if (thisArtist.equals("GOD") ) {
-                    songList.add(new Song(thisId, thisTitle, thisArtist));
+                    songList.add(new Song(thisId, thisTitle, thisAlbum));
                     //(&& musicCursor.getString(artistColumn) =="TeluguMp3.Mobi")
                 }
                 if (thisArtist.equals("Shivani") ) {
-                    songList.add(new Song(thisId, thisTitle, thisArtist));
+                    songList.add(new Song(thisId, thisTitle, thisAlbum));
                     //(&& musicCursor.getString(artistColumn) =="TeluguMp3.Mobi")
                 }
             }

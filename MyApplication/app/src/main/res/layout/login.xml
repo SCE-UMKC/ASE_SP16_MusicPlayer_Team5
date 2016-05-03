@@ -2,8 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background12"
-    >
+    android:background="@drawable/background12">
 
 
     <TextView android:layout_width="match_parent"
@@ -12,9 +11,11 @@
         android:padding="@dimen/padding_medium"
         android:gravity="center"
         android:text="@string/ask_access_activity_header"
-        android:textColor="@color/primary_textcolor"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="@dimen/text_size_verylarge"
         android:id="@+id/textView3"
+
+        android:textStyle="bold"
         />
 
     <Button
@@ -25,16 +26,29 @@
         android:layout_below="@+id/textView3"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="59dp"
-        android:onClick="register"/>
+        android:onClick="register"
+        android:textStyle="italic"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Login"
         android:id="@+id/login"
-        android:layout_below="@+id/register"
+        android:onClick="log"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/register"
+        android:layout_alignStart="@+id/register"
+        android:textStyle="italic"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Use FaceBook to Login"
+        android:id="@+id/buttonfb"
+        android:onClick="fblog"
+        android:layout_below="@+id/login"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="88dp"
-        android:onClick="log"/>
+        android:layout_marginTop="61dp"
+        android:textStyle="italic"/>
 
 </RelativeLayout>

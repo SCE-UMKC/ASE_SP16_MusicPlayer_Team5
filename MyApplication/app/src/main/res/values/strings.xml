@@ -4,4 +4,5 @@
     <string name="title">shuffle</string>
     <string name="end">End</string>
     <string name="ask_access_activity_header">Want to use Music player. Click Register to login</string>
+    <string name="facebook_app_id">1020000658071522</string>
 </resources>
