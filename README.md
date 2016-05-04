@@ -1,4 +1,4 @@
-# Project_MP
+# Music player application
 
 This is about Music player app developed in android studio. 
 Now a days we have  many music player applications but still we are not having some limitations. 
