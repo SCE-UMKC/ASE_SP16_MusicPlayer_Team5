@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background11">
+
+    <ImageButton
+        android:layout_width="193dp"
+        android:layout_height="180dp"
+        android:id="@+id/imageButton"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="songs1"
+        android:src="@drawable/allsongs"
+        android:layout_toLeftOf="@+id/imageButton3"
+        android:layout_toStartOf="@+id/imageButton3" />
+
+    <ImageButton
+        android:layout_width="193dp"
+        android:layout_height="200dp"
+        android:id="@+id/imageButton2"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="songs2"
+        android:src="@drawable/timebased" />
+
+    <ImageButton
+        android:layout_width="193dp"
+        android:layout_height="200dp"
+        android:id="@+id/imageButton3"
+        android:onClick="songs3"
+        android:src="@drawable/oldsongs"
+        android:layout_alignTop="@+id/imageButton2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageButton
+        android:layout_width="193dp"
+        android:layout_height="157dp"
+        android:id="@+id/imageButton4"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/imageButton"
+        android:layout_toEndOf="@+id/imageButton"
+        android:onClick="songs4"
+        android:src="@drawable/newsongs"/>
+
+    <ImageButton
+        android:layout_width="303dp"
+        android:layout_height="155dp"
+        android:id="@+id/imageButton5"
+        android:onClick="songs5"
+        android:src="@drawable/mood"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+
+
+</RelativeLayout>
